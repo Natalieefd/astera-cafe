@@ -21,7 +21,7 @@ class menuFactory extends Factory
             'nama' => fake()->randomElement(['Orange Juice', 'Esspreso', 'Crunchy Caramel', 'French Fries', 'Fried Chicken', 'Hot Chocolate', 'Meatball', 'Pastry Rasberries', 'Chocolate Cookies']),
             'stok' => fake()->randomDigitNotZero(),
             'harga' => fake()->randomNumber(5, true),
-            'gambar' => fake()->randomElement(['avocado-chesee-toast.jpg', 'creamy-spagetti.jpg', 'egg-toast.jpg', 'lemon-yakult.jpg', 'squash-watermelon.jpg', 'orange-lime.jpg', 'pinaple-milk-pie.jpg', 'squash-watermelon.jpg', 'crepes-frape-strawberry.jpg']),
+            'gambar' => fake()->unique()->randomElement(['avocado-chesee-toast.jpg', 'creamy-spagetti.jpg', 'egg-toast.jpg', 'lemon-yakult.jpg', 'squash-watermelon.jpg', 'orange-lime.jpg', 'pinaple-milk-pie.jpg', 'squash-watermelon.jpg', 'crepes-frape-strawberry.jpg', 'choco-oreo-waffle.jpg', 'chesecake-bluberry-strawberry.jpg', 'coffee.jpg', 'orange-honey-crepes.jpg', 'simply-salad.jpg', 'strayberry-french-toast.jpg']),
             'kategori_id' => kategori::all()->random()->id,
         ];
     }

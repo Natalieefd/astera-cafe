@@ -64,8 +64,8 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::controller(staffController::class)->group(function () {
         Route::get('/admin/dashboard/add-staff', 'addStaff')->name('admin.add_staff');
-        Route::post('/admin/dashboard/edit-staff/{id}/action', 'updateStaff')->name('admin.update_staff');
-        Route::post('/admin/dashboard/delete-staff/{id}/action', 'deleteStaff')->name('admin.delete_staff');
+        Route::post('/admin/dashboard/add-staff/action', 'storeStaff')->name('admin.store_staff');
+        Route::get('/admin/dashboard/delete-staff/{id}/action', 'deleteStaff')->name('admin.delete_staff');
     });
 
     Route::controller(menuController::class)->group(function () {
