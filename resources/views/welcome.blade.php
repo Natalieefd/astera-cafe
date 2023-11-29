@@ -1,0 +1,9 @@
+@extends('layouts.global')
+@section('content')
+    @include('components.nav_bar')
+    @include('components.greeting')
+    @include('components.top_menu')
+    @include('components.operation_hours')
+    @include('components.jenis_menu')
+    @include('components.footer')
+@endSection
