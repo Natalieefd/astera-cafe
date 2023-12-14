@@ -1,4 +1,4 @@
-<section class="relative h-full flex justify-center py-28 bg-cream">
+<section class="relative h-full flex justify-center pt-16 pb-28 bg-cream">
     <div class="flex flex-col w-full py-28 bg-teal-700">
         <div class="flex flex-col">
             <div class="pb-14 text-3xl text-cream font-dela uppercase text-center">astera cafe user</div>

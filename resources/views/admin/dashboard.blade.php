@@ -24,6 +24,12 @@
             <p class="font-black text-cream opacity-80 text-5xl">{{ $staffCount }}</p>
         </div>
     </section>
+    <div class="flex flex-col items-center justify-center pt-10 bg-cream">
+        <a href="{{ route('admin.grafik') }}"
+            class="flex p-3 w-fit px-5 bg-teal-950 rounded-md mr-25 mb-5 text-seashell font-medium hover:text-teal-950 hover:bg-teal-800">
+            <p>Grafik Astera Cafe</p>
+        </a>
+    </div>
     @include('components.admin.data_user')
     @include('components.admin.data_staff')
     @include('components.admin.data_menu')

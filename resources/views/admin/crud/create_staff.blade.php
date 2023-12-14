@@ -10,7 +10,7 @@
                     @csrf
                     <label class="pt-10 pb-3 font-DMSans font-medium text-seashell">Nama</label>
                     <input type="text" name="nama" placeholder="Nama"
-                        class="w-full px-2.5 py-2 bg-slate-50 rounded-md ring-1 ring-slate-300 focus:outline-none focus:ring-gray-500">
+                        class="w-full px-2.5 py-2 bg-teal-900 rounded-md ring-1 ring-teal-900 focus:outline-none focus:ring-gray-500 placeholder:text-teal-700">
 
                     @if (session('nama'))
                         <p class="pt-2 text-red-400 text-xs">
@@ -20,7 +20,7 @@
 
                     <label class="pt-5 pb-3 font-DMSans font-medium text-seashell">Username</label>
                     <input type="text" name="username" placeholder="Username"
-                        class="w-full px-2.5 py-2 bg-slate-50 rounded-md ring-1 ring-slate-300 focus:outline-none focus:ring-gray-500">
+                        class="w-full px-2.5 py-2 bg-teal-900 rounded-md ring-1 ring-teal-900 focus:outline-none focus:ring-gray-500 placeholder:text-teal-700">
 
                     @if (session('username'))
                         <p class="pt-2 text-red-400 text-xs">
@@ -30,7 +30,7 @@
 
                     <label class="pt-5 pb-3 font-DMSans font-medium text-seashell">Password</label>
                     <input type="password" name="password" placeholder="Password"
-                        class="w-fit pl-2.5 pr-28 py-2 bg-slate-50 rounded-md ring-1 ring-slate-300 focus:outline-none focus:ring-gray-500">
+                        class="w-fit pl-2.5 pr-28 py-2 bg-teal-900 rounded-md ring-1 ring-teal-900 focus:outline-none focus:ring-gray-500 placeholder:text-teal-700">
 
                     @if (session('password'))
                         <p class="pt-2 text-red-400 text-xs">
@@ -40,7 +40,7 @@
 
                     <label class="pt-5 pb-3 font-DMSans font-medium text-seashell">Pilih Jabatan</label>
                     <select name="jabatan"
-                        class="block w-full px-2.5 py-2.5 font-DMSans bg-slate-50 border-slate-50 text-gray-400 text-sm rounded-md focus:ring-gray-500 focus:border-gray-500">
+                        class="block w-full px-2.5 py-2.5 font-DMSans bg-teal-900 border-teal-900 text-teal-700 text-sm rounded-md focus:ring-gray-500 focus:border-gray-500 placeholder:text-teal-700">
                         <option selected>Pilih Jabatan</option>
                         <option value="Barista">Barista</option>
                         <option value="Kasir">Kasir</option>

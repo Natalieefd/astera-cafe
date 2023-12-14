@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GrafikController;
 use App\Http\Controllers\menuController;
 use App\Http\Controllers\staffController;
 use App\Models\menu;
@@ -62,11 +63,16 @@ Route::middleware('auth:admin')->group(function () {
         ]);
     })->name('admin.dashboard');
 
+    Route::get('/admin/dashboard/data-staff', [staffController::class, 'grafik'])->name('admin.data_staff');
+
     Route::controller(staffController::class)->group(function () {
         Route::get('/admin/dashboard/add-staff', 'addStaff')->name('admin.add_staff');
         Route::post('/admin/dashboard/add-staff/action', 'storeStaff')->name('admin.store_staff');
         Route::get('/admin/dashboard/delete-staff/{id}/action', 'deleteStaff')->name('admin.delete_staff');
+        Route::get('/admin/dashboard/search-staff', 'cariStaff')->name('admin.cari_staff');
     });
+
+    Route::get('/admin/dashboard/grafik', [GrafikController::class, 'index'])->name('admin.grafik');
 
     Route::controller(menuController::class)->group(function () {
         Route::get('/admin/dashboard/add-menu', 'addMenu')->name('admin.add_menu');
@@ -75,6 +81,7 @@ Route::middleware('auth:admin')->group(function () {
         Route::post('/admin/dashboard/edit-menu/{id}/action', 'updateMenu')->name('admin.update_menu');
         Route::get('/admin/dashboard/delete-menu/{id}/action', 'deleteMenu')->name('admin.delete_menu');
         Route::get('/admin/dashboard/export', 'exportExcelMenu')->name('admin.exportExcelMenu');
+        Route::get('/admin/dashboard/search-menu', 'cariMenuAdmin')->name('admin.cari_menu');
     });
 });
 
@@ -89,6 +96,10 @@ Route::middleware('auth:user')->group(function () {
             'menu' => menu::all(),
         ]);
     })->name('menu');
+
+    Route::controller(menuController::class)->group(function () {
+        Route::get('/menu/search', 'cariMenuUser')->name('user.cari_menu');
+    });
 });
 
 

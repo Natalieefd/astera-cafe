@@ -6,7 +6,10 @@ use App\Exports\menuExport;
 use App\Http\Controllers\Controller;
 use App\Models\kategori;
 use App\Models\menu;
+use App\Models\staff;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 
 use function Laravel\Prompts\error;
@@ -123,5 +126,38 @@ class menuController extends Controller
         $menu = menu::findOrFail($id);
         $kategori = kategori::all();
         return view('user.menu', ['menu' => $menu, 'kategori' => $kategori]);
+    }
+
+    public function cariMenuUser(Request $request)
+	{
+		$search = $request->search;
+
+        if($request){
+            $menu = menu::where('nama','like',"%".$search."%")->get();
+        } else {
+            $menu = menu::all();
+        }
+
+        return view('user.menu',['menu' => $menu]);
+	}
+
+    public function cariMenuAdmin(Request $request)
+	{
+		$search = $request->search;
+
+        if($request){
+            $menu = menu::where('nama','like',"%".$search."%")->get();
+        } else {
+            $menu = menu::all();
+        }
+
+        return view('admin.dashboard',[
+            'menu' => $menu,
+            'user' => User::all(),
+            'staff' => staff::all(),
+            'userCount' => User::count(),
+            'menuCount' => menu::count(),
+            'staffCount' => staff::count(),
+        ]);
     }
 }

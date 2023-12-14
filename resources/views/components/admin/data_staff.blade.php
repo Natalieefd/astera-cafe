@@ -2,11 +2,17 @@
     <div class="flex flex-col w-full py-28 bg-teal-700">
         <div class="flex flex-col">
             <div class="pb-14 text-3xl text-cream font-dela uppercase text-center">astera cafe staff</div>
-            <div class="flex flex-col ml-32">
-                <a href="{{ route('admin.add_staff') }}"
-                    class="flex p-3 w-fit px-5 bg-teal-950 rounded-md mr-25 mb-5 text-seashell font-medium hover:text-teal-950 hover:bg-teal-800">
-                    <p>Add Staff</p>
-                </a>
+            <div class="flex items-center justify-between">
+                <div class="flex flex-col ml-32">
+                    <a href="{{ route('admin.add_staff') }}"
+                        class="flex p-3 w-fit px-5 bg-teal-950 rounded-md mr-25 mb-5 text-seashell font-medium hover:text-teal-950 hover:bg-teal-800">
+                        <p>Add Staff</p>
+                    </a>
+                </div>
+                <form action="{{ route('admin.cari_staff') }}" method="get" class="mr-36 mb-5">
+                    <input type="text" name="search" placeholder="Search here . . ."
+                        class="text-sm font-DMSans p-3 rounded-sm w-64 h-7 ring-1 ring-teal-800 hover:bg-slate-100 focus:ring-teal-950">
+                </form>
             </div>
             <div class="flex flex-row">
                 <table class="w-full mx-32 bg-teal-800 rounded-2xl">
@@ -54,5 +60,7 @@
                 </table>
             </div>
         </div>
+    </div>
+    <div>
     </div>
 </section>

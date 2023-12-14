@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\menu;
 use App\Models\staff;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class staffController extends Controller
@@ -49,4 +52,25 @@ class staffController extends Controller
             'Data Staff Berhasil Dihapus',
         );
     }
+
+    public function cariStaff(Request $request)
+	{
+		$search = $request->search;
+
+        if($request){
+            $staff = staff::where('nama','like',"%".$search."%")->get();
+        } else {
+            $staff = staff::all();
+        }
+
+        return view('admin.dashboard',[
+            'staff' => $staff,
+            'user' => User::all(),
+            'menu' => menu::all(),
+            'userCount' => User::count(),
+            'menuCount' => menu::count(),
+            'staffCount' => staff::count(),
+        ]);
+	}
+
 }

@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         kategori::factory(2)->create();
-        menu::factory(10)->create();
-        staff::factory(5)->create();
+        menu::factory(20)->create();
+        staff::factory(15)->create();
         $this->call(userSeeder::class);
     }
 }
